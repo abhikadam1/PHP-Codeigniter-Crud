@@ -11,8 +11,10 @@
             margin: auto;
         } */
     </style>
-    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+    <!-- <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"> -->
+    <link rel="stylesheet" href="<?= base_url()?>assets/bootstrap/css/bootstrap.min.css">
+    <script src='<?= base_url()?>assets/bootstrap/js/bootstrap.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -87,12 +89,13 @@
     </div>
 
     <div class="display-info">
-        <table class="table table-striped" id="myTable" style="align:center;  display:none; margin-left:15%;">
+        <table class="table table-striped" id="myTable" style="align:center;  display:none; margin-left:10%;">
             <thead>
                 <tr>
                     <th style="display:none;">Sr. No</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>College</th>
                     <th>Department</th>
                     <th>Date of Joining</th>
                     <th>Action</th>
@@ -125,29 +128,32 @@
             //     console.log(formData);
             //     return false;
             // })
-            $("#createuser").submit(function(e){
-                e.preventDefault();
-                let form_data = new formData(this);
-                console.log(form_data);
-                return false;
-            })
-
-            // $('#add_user').on("click", function (e) {
-            //     console.log("inside add button");
-            //     var name = $("#name").val();
-            //     var email = $("#email").val();
-            //     var dept_ids = $("#dept").val();
-            //     var dept_values = $("#dept").find(":selected").text();
-            //     var dob = $("#dob").val();
-            //     var count = $('#myTable tr').length;
-           
-            //     if (name && email && dept_ids && dept_values && dob && checkPassword()) {
-            //         $('#myTable').css('display', "block");
-            //         $("#dept").select2("val", "");
-            //         $('#createuser')[0].reset();
-            //         $('#myTable tbody').append('<tr id="' + count + '" class="child"><td  id="name_' + count + '">' + name + '</td><td id="email_' + count + '">' + email + '</td><td id="dept_ids_' + count + '">' + dept_values + '  </td><td id="dob_' + count + '">' + dob + '</td><td><a href="javascript:void(0);" class="edit-row btn btn-small btn-primary" data-srno="' + count + '" id="editBtm" onclick="return editBtn(' + count + ')">Edit</a> &nbsp <a href="javascript:void(0);" class="remove-row btn btn-small btn-danger" data-srno="' + count + '" id="removeBtm" onclick="return removeBtn(' + count + ')">Remove</a> </td> <input type="hidden" id="dept_values_' + count + '" value=' + dept_ids + '> </tr>');
-            //     }
+            // $("#createuser").submit(function(e){
+            //     e.preventDefault();
+            //     formInfo = $('#createuser');
+            //     let form_data = new formData(formInfo);
+            //     console.log(form_data);
+            //     return false;
             // })
+
+            $('#add_user').on("click", function (e) {
+                console.log("inside add button");
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var dept_ids = $("#dept").val();
+                var dept_values = $("#dept").find(":selected").text();
+                var clg_ids = $("#clg").val();
+                var clg_values = $("#clg").find(":selected").text();
+                var dob = $("#dob").val();
+                var count = $('#myTable tr').length;
+           
+                if (name && email && dept_ids && dept_values && dob && checkPassword()) {
+                    $('#myTable').css('display', "block");
+                    $("#dept").select2("val", "");
+                    $('#createuser')[0].reset();
+                    $('#myTable tbody').append('<tr id="' + count + '" class="child"><td  id="name_' + count + '">' + name + '</td><td id="email_' + count + '">' + email + '</td> <td id="clg_'+count+'"> '+ clg_values+'</td> <td id="dept_ids_' + count + '">' + dept_values + '  </td><td id="dob_' + count + '">' + dob + '</td><td><a href="javascript:void(0);" class="edit-row btn btn-small btn-primary" data-srno="' + count + '" id="editBtm" onclick="return editBtn(' + count + ')">Edit</a> &nbsp <a href="javascript:void(0);" class="remove-row btn btn-small btn-danger" data-srno="' + count + '" id="removeBtm" onclick="return removeBtn(' + count + ')">Remove</a> </td> <input type="hidden" id="dept_values_' + count + '" value=' + dept_ids + '> </tr>');
+                }
+            })
 
             // $("#clg").on('change', function () {
             //     var clg_id = $(this).val();
