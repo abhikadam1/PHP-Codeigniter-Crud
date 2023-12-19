@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Info CRUD_application New</title>
+    <title>User Info CRUD_application</title>
     <style>
         /* .table{
             width: 80%;
