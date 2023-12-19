@@ -24,7 +24,7 @@
         <table style="padding: 10px; margin:10px">
         <tr>
             <td>
-                <lable>Email</label>
+                <lable>Email Id</label>
                 <input type="text" name="email" value=''>
             </td>
         </tr>
