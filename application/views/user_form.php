@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Info CRUD_application 1554666</title>
+    <title>User Info CRUD_application</title>
     <style>
         /* .table{
             width: 80%;
@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="">Name 54546</label>
+                        <label for="">Name</label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="Your Name Please"
                             required>
                     </div>
