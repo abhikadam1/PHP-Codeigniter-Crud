@@ -150,6 +150,7 @@
                 if (name && email && dept_ids && dept_values && dob && checkPassword()) {
                     $('#myTable').css('display', "block");
                     $("#dept").select2("val", "");
+                    $('#dept').val(null).trigger('change');
                     $('#createuser')[0].reset();
                     $('#myTable tbody').append('<tr id="' + count + '" class="child"><td  id="name_' + count + '">' + name + '</td><td id="email_' + count + '">' + email + '</td> <td id="clg_'+count+'"> '+ clg_values+'</td> <td id="dept_ids_' + count + '">' + dept_values + '  </td><td id="dob_' + count + '">' + dob + '</td><td><a href="javascript:void(0);" class="edit-row btn btn-small btn-primary" data-srno="' + count + '" id="editBtm" onclick="return editBtn(' + count + ')">Edit</a> &nbsp <a href="javascript:void(0);" class="remove-row btn btn-small btn-danger" data-srno="' + count + '" id="removeBtm" onclick="return removeBtn(' + count + ')">Remove</a> </td> <input type="hidden" id="dept_values_' + count + '" value=' + dept_ids + '> </tr>');
                 }
