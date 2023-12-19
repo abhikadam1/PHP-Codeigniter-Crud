@@ -22,7 +22,7 @@
 
 <body class="body">
     <?php ?>
-    <button><a href="<?= base_url() ?>Auth/add_product">ADD Product</a></button>
+    <button><a href="<?= base_url() ?>Auth/add_product">ADD Product 654646</a></button>
     <table width="60%" class="table table-bordered">
         <thead>
             <tr>
