@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/cit/';
+$config['base_url'] = 'http://localhost/PHP-Codeigniter-Crud/';
 
 /*
 |--------------------------------------------------------------------------
@@ -138,7 +138,9 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+// $config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = FCPATH . 'vendor/autoload.php';
+
 
 /*
 |--------------------------------------------------------------------------
@@ -188,6 +190,9 @@ $config['enable_query_strings'] = FALSE;
 $config['controller_trigger'] = 'c';
 $config['function_trigger'] = 'm';
 $config['directory_trigger'] = 'd';
+$autoload['helper'] = array('custom_helper');
+$config['stripe_key'] = "pk_test_51H5aMlJhoh...";
+$config['stripe_secret'] = "sk_test_51H5aMlJhoh...";
 
 /*
 |--------------------------------------------------------------------------

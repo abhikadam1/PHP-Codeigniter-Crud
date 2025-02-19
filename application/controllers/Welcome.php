@@ -21,8 +21,9 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
+		$this->load->view('maps_view');
 		// $this->load->view('welcome_message');
-		$this->load->view('addTableRow');
+		// $this->load->view('addTableRow');
 	}
 	public function handsonTable()
 	{

@@ -60,3 +60,6 @@ $route['Students/select']='Students/display_stud';
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+// $route['paymentView'] = 'Payment';
+$route['paymentView'] = 'Payment';
+
