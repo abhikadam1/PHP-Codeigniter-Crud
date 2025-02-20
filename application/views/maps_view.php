@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Google Maps</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=your_api_key_here"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABsYtgCZmVcWIGmKVK0M88z9HMRmI6dgg"></script>
     <script>
         function initMap() {
-            var location = { lat: -34.397, lng: 150.644 }; // Example location
+            var location = { lat: 17.146482, lng: 74.482820 }; // Example location
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 8,
                 center: location

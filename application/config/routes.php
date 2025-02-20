@@ -62,4 +62,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 // $route['paymentView'] = 'Payment';
 $route['paymentView'] = 'Payment';
+$route['mapView'] = 'Maps';
 
