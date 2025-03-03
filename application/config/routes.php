@@ -63,4 +63,6 @@ $route['translate_uri_dashes'] = FALSE;
 // $route['paymentView'] = 'Payment';
 $route['paymentView'] = 'Payment';
 $route['mapView'] = 'Maps';
-
+$route['login'] = 'AuthController/login';
+$route['register'] = 'AuthController/register';
+$route['profile'] = 'AuthController/profile';

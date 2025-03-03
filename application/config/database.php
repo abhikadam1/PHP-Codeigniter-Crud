@@ -80,6 +80,7 @@ $db['default'] = array(
 	'password' => 'root',
 	'database' => 'Abhi1',
 	'dbdriver' => 'mysqli',
+	'port' => 3307,
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
