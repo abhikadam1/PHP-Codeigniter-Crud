@@ -6,14 +6,14 @@ use Firebase\JWT\Key;
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-if (!defined('JWT_SECRET_KEY')) {
-    define('JWT_SECRET_KEY', 'secrete_key');
-}
+// if (!defined('JWT_SECRET_KEY')) {
+//     define('JWT_SECRET_KEY', 'secret_key');
+// }
 
 /**
  * Generate JWT Token
  */
-function generate_jwt($data)
+function generate_jwt1($data)
 {
     $issuedAt = time();
     $expireAt = $issuedAt + 3600; // Token valid for 1 hour
@@ -52,26 +52,22 @@ function get_jwt_from_request()
     return null;
 }
 
+// Generate JWT Token
+function generate_jwt($data) {
+    $CI =& get_instance();
+    $key = $CI->config->item('jwt_key');
+    $iat = time(); // Issued at time
+    $exp = $iat + $CI->config->item('jwt_expiration'); // Expiration time
 
-// require_once APPPATH . 'libraries/JWT.php';
-// use \Firebase\JWT\JWT;
+    $payload = array(
+        'iss' => base_url(), // Issuer
+        'iat' => $iat,       // Issued at
+        'exp' => $exp,       // Expiration time
+        'data' => $data      // User data
+    );
 
-// // Generate JWT Token
-// function generate_jwt($data) {
-//     $CI =& get_instance();
-//     $key = $CI->config->item('jwt_key');
-//     $iat = time(); // Issued at time
-//     $exp = $iat + $CI->config->item('jwt_expiration'); // Expiration time
-
-//     $payload = array(
-//         'iss' => base_url(), // Issuer
-//         'iat' => $iat,       // Issued at
-//         'exp' => $exp,       // Expiration time
-//         'data' => $data      // User data
-//     );
-
-//     return JWT::encode($payload, $key, $CI->config->item('jwt_algorithm'));
-// }
+    return JWT::encode($payload, $key, $CI->config->item('jwt_algorithm'));
+}
 
 // Decode and Verify JWT Token
 function validate_jwt($token) {

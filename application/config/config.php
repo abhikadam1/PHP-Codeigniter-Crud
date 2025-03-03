@@ -536,6 +536,6 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['jwt_key'] = 'secrete_key';
+$config['jwt_key'] = 'secret_key';
 $config['jwt_algorithm'] = 'HS256'; // HMAC algorithm
 $config['jwt_expiration'] = 3600;   // Token expiry in seconds (1 hour)
